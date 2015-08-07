@@ -1,11 +1,15 @@
 <html>
 <head>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
     <title>Contacts</title>
 </head>
 <body>
-
+  <div class="container">
     <h1>You created a contact!</h1>
     <p>{{ newcontact.getName }}</p>
-    <p><a href='/'>index.</a></p>
+    <p>{{ newcontact.getNumber }}</p>
+    <p>{{ newcontact.getAddress}}</p>
+    <p><a href='/'>Home</a></p>
+  </div>
 </body>
 </html>

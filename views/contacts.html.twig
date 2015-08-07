@@ -1,41 +1,51 @@
 <html>
 <head>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
   <title>Address Book</title>
 </head>
 <body>
   <div class="container">
-  <h1>Address Book</h1>
-  {% if contacts is not empty %}
-  <h4>Here they are</h4>
-  {% for contact in contacts %}
-    <ul>
-      <h3><li>{{ contact.getName}}</li></h3>
-      <ul>
-        <li>Phone Number: {{ contact.getNumber }}</li>
-        <li>Address: {{ contact.getAddress }}</li>
-      </ul>
-  {% endfor %}
-    </ul>
-    {% endif %}
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Contacts</h2>
+        <br/>
+        {% if contacts is not empty %}
 
-<hr>
-    <br/>
-    <form action='/contacts' method='post'>
-        <h3><label for='name'>Name</label></h3>
-        <input id='name' name='name' type='text'>
+          {% for contact in contacts %}
+            <ul>
+              <h4><li>{{ contact.getName}}</li></h4>
+                <ul>
+                  <li>Phone Number: {{ contact.getNumber }}</li>
+                  <li>Address: {{ contact.getAddress }}</li>
+                </ul>
+            </ul>
+          {% endfor %}
+        {% endif %}
+        <br/>
+        <form action='/delete_contacts' method='post'>
+          <button type='submit' class="btn-danger btn-lg">Clear</button>
+        </form>
+      </div>
+      <div class='col-md-6'>
+      <h3>Enter New Contact</h3>
+      <br/>
+      <form action='/contacts' method='post'>
+        <div class='form-group'>
+          <h4><label for='name'>Name</label></h4>
+          <input id='name' name='name' type='text'>
+        </div>
+        <div class='form-group'>
+          <h4><label for=''>Number</label></h4>
+          <input id='number' name='number' type='text'>
+        </div>
+        <div class='form-group'>
+          <h4><label for='Address'>Address</label></h4>
+          <input id='address' name='address' type='text'>
+        </div>
+          <button type='submit' class="btn-success btn-lg">Add</button>
+      </form>
+    </div>
 
-        <h3><label for=''>Number</label></h3>
-        <input id='number' name='number' type='number'>
-
-        <h3><label for='Address'>Address</label></h3>
-        <input id='address' name='address' type='text'>
-
-        <button type='submit'>Create</button>
-    </form>
-    <form action='/delete_contacts' method='post'>
-        <button type='submit'>Clear</button>
-    </form>
   </div>
-
 </body>
 </html>
