@@ -36,14 +36,17 @@ class Contact {
     return $this->address;
   }
 
+  //function to create new contact and store it into 'list_of_contacts'
   function save() {
     array_push($_SESSION['list_of_contacts'], $this);
   }
 
+  //function to retrieve all contacts from 'list_of_contacts'
   static function getAll() {
     return $_SESSION['list_of_contacts'];
   }
 
+  //function to delete all contacts from 'list_of_contacts'
   static function deleteAll() {
     $_SESSION['list_of_contacts'] = array();
   }
