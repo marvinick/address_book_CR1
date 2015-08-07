@@ -1,0 +1,18 @@
+<html>
+<head>
+  <title>Address Book</title>
+</head>
+<body>
+  <div class="container">
+  <h1>Address Book</h1>
+  {% if contacts is not empty %}
+    <ul>
+      <h3><li>{{ contact.getName}}</li></h3>
+      <ul>
+        <li>Phone Number: {{ contact.getNumber }}</li>
+        <li>Address: {{ contact.getAddress }}</li>
+      </ul>
+    </ul>
+  {% endif %>}
+</body>
+</html>
