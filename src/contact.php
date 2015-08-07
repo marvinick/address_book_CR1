@@ -29,11 +29,11 @@ class Contact {
   }
 
   function setAddress($new_address) {
-    $this->address = (string) $new_address
+    $this->address = (string) $new_address;
   }
 
   function getAddress() {
-    return $this->address
+    return $this->address;
   }
 
   function save() {

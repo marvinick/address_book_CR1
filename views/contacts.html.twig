@@ -6,13 +6,36 @@
   <div class="container">
   <h1>Address Book</h1>
   {% if contacts is not empty %}
+  <h4>Here they are</h4>
+  {% for contact in contacts %}
     <ul>
       <h3><li>{{ contact.getName}}</li></h3>
       <ul>
         <li>Phone Number: {{ contact.getNumber }}</li>
         <li>Address: {{ contact.getAddress }}</li>
       </ul>
+  {% endfor %}
     </ul>
-  {% endif %>}
+    {% endif %}
+
+<hr>
+    <br/>
+    <form action='/contacts' method='post'>
+        <h3><label for='name'>Name</label></h3>
+        <input id='name' name='name' type='text'>
+
+        <h3><label for=''>Number</label></h3>
+        <input id='number' name='number' type='number'>
+
+        <h3><label for='Address'>Address</label></h3>
+        <input id='address' name='address' type='text'>
+
+        <button type='submit'>Create</button>
+    </form>
+    <form action='/delete_contacts' method='post'>
+        <button type='submit'>Clear</button>
+    </form>
+  </div>
+
 </body>
 </html>
