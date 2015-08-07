@@ -5,11 +5,15 @@
 </head>
 <body>
   <div class="container">
-    <h1>You created a contact!</h1>
-    <p>{{ newcontact.getName }}</p>
-    <p>{{ newcontact.getNumber }}</p>
-    <p>{{ newcontact.getAddress}}</p>
-    <p><a href='/'>Home</a></p>
+    <h3>You created a contact!</h1>
+    <br/>
+    <h4>{{ newcontact.getName }}</h4>
+    <ul>
+      <h6>{{ newcontact.getNumber }}</h6>
+      <h6>{{ newcontact.getAddress}}</h6>
+    </ul>
+    <hr>
+    <h4><a href='/'>Home</a></h4>
   </div>
 </body>
 </html>
